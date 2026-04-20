@@ -1,5 +1,5 @@
 ---
-title: "Velocity CLI | Build Fast"
+title: "Tokenflake CLI | Build Fast"
 description: "The ultimate command-line tool to scaffold high-performance Astro projects."
 publishDate: "2024-04-20"
 category: "Developer Tools"
@@ -7,9 +7,9 @@ featured: true
 keywords: ["CLI", "Astro Tool", "Developer Experience"]
 ---
 
-# Velocity CLI
+# Tokenflake CLI
 
-Velocity CLI is designed for speed. It automates the boring parts of setting up a new project so you can focus on building your product.
+Tokenflake CLI is designed for speed. It automates the boring parts of setting up a new project so you can focus on building your product.
 
 ## Key Features
 - **Instant Scaffolding**: Get a production-ready site in seconds.

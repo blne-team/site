@@ -2,7 +2,6 @@
 import { getLangFromUrl, useTranslations, getLocalizedPath, getRelativePath } from '../i18n/utils';
 import { languages } from '../i18n/ui';
 import { SITE } from '../site.config';
-import { Image } from 'astro:assets';
 import logoImg from '../assets/favicon.svg';
 
 const lang = getLangFromUrl(Astro.url);
@@ -15,7 +14,7 @@ const t = useTranslations(lang);
       <div class="grid-12">
         <div class="footer-brand">
           <a href={getLocalizedPath('/', lang)} class="logo">
-            <Image src={logoImg} alt={t('site.name')} class="logo-img" width={32} height={32} />
+            <img src={logoImg.src} alt={t('site.name')} class="logo-img" width={32} height={32} />
             <span class="logo-text">{t('site.name')}</span>
           </a>
           <p class="footer-desc">{t('footer.description')}</p>
