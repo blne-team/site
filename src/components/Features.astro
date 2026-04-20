@@ -1,0 +1,104 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const features = [
+  {
+    title: t('features.seo.title'),
+    desc: t('features.seo.desc'),
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`
+  },
+  {
+    title: t('features.perf.title'),
+    desc: t('features.perf.desc'),
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>`
+  },
+  {
+    title: t('features.design.title'),
+    desc: t('features.design.desc'),
+    icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.5 1.5"></path><path d="M7.5 3.5L13 9"></path></svg>`
+  }
+];
+---
+
+<section class="features section" id="features">
+  <div class="container">
+    <div class="features-header">
+      <h2 class="section-heading">{t('features.title')}</h2>
+    </div>
+
+    <div class="features-grid grid-12">
+      {features.map(feature => (
+        <div class="card feature-card">
+          <div class="feature-icon" set:html={feature.icon}></div>
+          <h3 class="feature-title">{feature.title}</h3>
+          <p class="feature-desc">{feature.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .features-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .features-grid {
+    gap: 1.5rem;
+  }
+
+  .feature-card {
+    grid-column: span 1;
+    min-height: 240px;
+    border-radius: var(--radius-button);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    transition: transform 0.2s;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+  }
+
+  @media (min-width: 768px) {
+    .feature-card {
+      grid-column: span 6;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .feature-card {
+      grid-column: span 4;
+    }
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background-color: var(--purple-subtle);
+    color: var(--kraken-purple);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+  }
+
+  .feature-desc {
+    color: var(--text-secondary);
+    line-height: 1.5;
+  }
+</style>

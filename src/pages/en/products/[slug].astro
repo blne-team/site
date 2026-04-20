@@ -1,0 +1,27 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Nav from '../../../components/Nav.astro';
+import Footer from '../../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const products = await getCollection('products', ({ id }) => id.startsWith('en/'));
+  return products.map(product => ({
+    params: { slug: product.id.split('/')[1] },
+    props: { product },
+  }));
+}
+
+const { product } = Astro.props;
+const { Content } = await render(product);
+---
+
+<Layout title={product.data.title} description={product.data.description} keywords={product.data.keywords}>
+	<Nav />
+	<main class="container section">
+    <div class="prose">
+      <Content />
+    </div>
+	</main>
+	<Footer />
+</Layout>

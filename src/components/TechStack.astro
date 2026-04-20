@@ -1,0 +1,63 @@
+---
+const techs = [
+  { name: 'Astro', desc: 'Framework', icon: '🚀' },
+  { name: 'Tailwind', desc: 'Styling', icon: '🎨' },
+  { name: 'TypeScript', desc: 'Language', icon: '📘' },
+  { name: 'Vite', desc: 'Bundler', icon: '⚡' },
+];
+---
+
+<section class="tech-stack section">
+  <div class="container">
+    <div class="stack-header">
+      <h2 class="section-heading">Modern Tech Stack</h2>
+      <p class="text-secondary">We leverage the best tools in the industry to deliver superior results.</p>
+    </div>
+    <div class="stack-grid">
+      {techs.map(tech => (
+        <div class="tech-card card">
+          <div class="tech-icon">{tech.icon}</div>
+          <div class="tech-info">
+            <h3>{tech.name}</h3>
+            <p>{tech.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+  .tech-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: var(--radius-button);
+  }
+  .tech-icon {
+    font-size: 2rem;
+  }
+  .tech-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .tech-info p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+  .text-secondary {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+  }
+</style>

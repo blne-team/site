@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const allProducts = await getCollection('products', ({ id }) => {
+  return id.startsWith(`${lang}/`);
+});
+---
+
+<Layout title="Our Products | Kraken Studio">
+	<Nav />
+	<main class="container section">
+		<h1 class="display-hero">Our Products</h1>
+    <p class="hero-subtitle">Discover our high-performance digital tools and products.</p>
+    
+    <div class="grid-12" style="margin-top: 4rem;">
+      {allProducts.map(product => (
+        <a href={getLocalizedPath(`/products/${product.id.split('/')[1]}`, lang)} class="card product-card">
+          <span class="uppercase-label">{product.data.category}</span>
+          <h3>{product.data.title}</h3>
+          <p>{product.data.description}</p>
+        </a>
+      ))}
+    </div>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+  .product-card {
+    grid-column: span 1;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s;
+  }
+  .product-card:hover {
+    transform: translateY(-4px);
+  }
+  @media (min-width: 768px) {
+    .product-card {
+      grid-column: span 6;
+    }
+  }
+  @media (min-width: 1024px) {
+    .product-card {
+      grid-column: span 4;
+    }
+  }
+  h3 { color: var(--kraken-purple); }
+  p { color: var(--text-secondary); }
+</style>

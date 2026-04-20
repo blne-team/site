@@ -1,0 +1,281 @@
+---
+import { getLangFromUrl, useTranslations, getRelativePath, getLocalizedPath } from '../i18n/utils';
+import { languages } from '../i18n/ui';
+import ThemeToggle from './ThemeToggle.astro';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navLinks = [
+  { href: getLocalizedPath('', lang), label: t('nav.home') },
+  { href: getLocalizedPath('products', lang), label: t('nav.products') },
+  { href: getLocalizedPath('about', lang), label: t('nav.about') },
+  { href: getLocalizedPath('services', lang), label: t('nav.services') },
+];
+
+---
+
+<header class="nav-header">
+  <nav class="container nav-container">
+    <a href={getLocalizedPath('/', lang)} class="logo">CLAY</a>
+    
+    <div class="nav-desktop">
+      <ul class="nav-links">
+        {navLinks.map(({ href, label }) => (
+          <li><a href={href}>{label}</a></li>
+        ))}
+      </ul>
+
+      <div class="nav-actions">
+        <div class="lang-dropdown">
+          <button class="lang-dropbtn" aria-haspopup="true" aria-expanded="false">
+            {lang.toUpperCase()}
+            <svg width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+          <div class="lang-content">
+            <div class="lang-content-inner">
+              {Object.entries(languages).map(([code, name]) => (
+                <a href={getRelativePath(Astro.url, code)} class={lang === code ? 'active' : ''}>
+                  {name}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <ThemeToggle />
+        <a href={getLocalizedPath('/contact', lang)} class="btn btn-primary">{t('nav.contact')}</a>
+      </div>
+    </div>
+
+    <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </nav>
+
+  <div class="nav-mobile" id="navMobile">
+    <ul class="nav-links-mobile">
+      {navLinks.map(({ href, label }) => (
+        <li><a href={href}>{label}</a></li>
+      ))}
+      <li><a href={getLocalizedPath('/contact', lang)}>{t('nav.contact')}</a></li>
+    </ul>
+    <div class="mobile-actions">
+      <div class="lang-switcher-mobile">
+        {Object.entries(languages).map(([code, name]) => (
+          <a href={getRelativePath(Astro.url, code)} class={lang === code ? 'active' : ''}>
+            {name}
+          </a>
+        ))}
+      </div>
+      <ThemeToggle />
+    </div>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const navMobile = document.getElementById('navMobile');
+
+  menuToggle?.addEventListener('click', () => {
+    navMobile?.classList.toggle('active');
+    menuToggle?.classList.toggle('active');
+  });
+
+  const dropBtn = document.querySelector('.lang-dropbtn');
+  dropBtn?.addEventListener('click', (e) => {
+    const isExpanded = dropBtn.getAttribute('aria-expanded') === 'true';
+    dropBtn.setAttribute('aria-expanded', !isExpanded ? 'true' : 'false');
+  });
+</script>
+
+<style>
+  .nav-header {
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border-gray);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--kraken-purple);
+    text-decoration: none;
+    z-index: 101;
+  }
+  
+  .nav-desktop {
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.25rem;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover {
+    color: var(--kraken-purple);
+  }
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  /* Dropdown Styles */
+  .lang-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .lang-dropbtn {
+    background: none;
+    border: 1px solid var(--border-gray);
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.2s;
+  }
+  .lang-dropbtn:hover {
+    background-color: var(--purple-subtle);
+  }
+  .lang-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding-top: 8px;
+    z-index: 100;
+  }
+  .lang-content-inner {
+    background-color: var(--white);
+    min-width: 120px;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .lang-content-inner a {
+    color: var(--text-primary);
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.8125rem;
+  }
+  .lang-content-inner a:hover {
+    background-color: var(--purple-subtle);
+  }
+  .lang-content-inner a.active {
+    font-weight: 600;
+    color: var(--kraken-purple);
+  }
+  .lang-dropdown:hover .lang-content {
+    display: block;
+  }
+
+  /* Mobile Styles */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 101;
+  }
+
+  @media (min-width: 992px) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+  }
+
+  .bar {
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    transition: all 0.3s;
+  }
+
+  .nav-mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    padding: 8rem 2rem;
+    gap: 2rem;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+  }
+
+  .nav-mobile.active {
+    transform: translateY(0);
+  }
+
+  .nav-links-mobile {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .nav-links-mobile a {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--text-primary);
+  }
+  .mobile-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .lang-switcher-mobile {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .lang-switcher-mobile a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+  .lang-switcher-mobile a.active {
+    color: var(--text-primary);
+  }
+</style>

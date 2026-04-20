@@ -1,0 +1,23 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import Stats from '../../components/Stats.astro';
+import TechStack from '../../components/TechStack.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<Layout title={t('hero.title')}>
+	<Nav />
+	<main>
+		<Hero />
+		<Features />
+    <Stats />
+    <TechStack />
+	</main>
+	<Footer />
+</Layout>

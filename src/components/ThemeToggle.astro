@@ -1,0 +1,127 @@
+<div class="theme-dropdown">
+  <button class="theme-dropbtn" id="theme-current" aria-haspopup="true" aria-expanded="false" title="Change Theme">
+    <svg class="icon-light" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+    <svg class="icon-dark" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    <svg class="icon-auto" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+    <svg class="chevron" width="10" height="10" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
+  <div class="theme-content">
+    <div class="theme-content-inner">
+      <button class="theme-option" data-theme="light">Light</button>
+      <button class="theme-option" data-theme="dark">Dark</button>
+      <button class="theme-option" data-theme="auto">Auto</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const getTheme = () => localStorage.getItem('theme') || 'auto';
+  
+  const applyTheme = (theme: string) => {
+    const root = document.documentElement;
+    const isDark = theme === 'auto' 
+      ? window.matchMedia('(prefers-color-scheme: dark)').matches 
+      : theme === 'dark';
+    
+    root.classList.toggle('dark', isDark);
+    
+    // Update button icon visibility
+    const btn = document.getElementById('theme-current');
+    if (btn) {
+      btn.className = `theme-dropbtn is-${theme}`;
+    }
+
+    // Update active state in menu
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      const optTheme = (opt as HTMLElement).dataset.theme;
+      opt.classList.toggle('active', optTheme === theme);
+    });
+  };
+
+  const setTheme = (theme: string) => {
+    localStorage.setItem('theme', theme);
+    applyTheme(theme);
+  };
+
+  document.querySelectorAll('.theme-option').forEach(opt => {
+    opt.addEventListener('click', () => {
+      const theme = (opt as HTMLElement).dataset.theme;
+      if (theme) setTheme(theme);
+    });
+  });
+
+  // Initialize
+  applyTheme(getTheme());
+
+  // Listen for system changes
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (getTheme() === 'auto') applyTheme('auto');
+  });
+</script>
+
+<style>
+  .theme-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .theme-dropbtn {
+    background: none;
+    border: 1px solid var(--border-gray);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .theme-dropbtn:hover {
+    background-color: var(--purple-subtle);
+  }
+
+  .icon-light, .icon-dark, .icon-auto { display: none; }
+  .theme-dropbtn.is-light .icon-light { display: block; }
+  .theme-dropbtn.is-dark .icon-dark { display: block; }
+  .theme-dropbtn.is-auto .icon-auto { display: block; }
+
+  .theme-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    padding-top: 8px;
+    z-index: 10;
+  }
+  .theme-content-inner {
+    background-color: var(--white);
+    min-width: 120px;
+    box-shadow: var(--shadow-subtle);
+    border: 1px solid var(--border-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .theme-option {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    padding: 10px 16px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 0.875rem;
+  }
+  .theme-option:hover {
+    background-color: var(--purple-subtle);
+  }
+  .theme-option.active {
+    font-weight: 600;
+    color: var(--kraken-purple);
+  }
+  .theme-dropdown:hover .theme-content {
+    display: block;
+  }
+</style>

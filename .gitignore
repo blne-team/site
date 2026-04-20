@@ -22,3 +22,13 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+.agents
+.codara
+.codex
+.gemini
+.opencode
+
+AGENTS.md
+GEMINI.md
+OPENCODE.md

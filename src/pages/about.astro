@@ -1,0 +1,23 @@
+---
+import { getEntry, render } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+
+const entry = await getEntry('pages', `${lang}/about`);
+if (!entry) return Astro.redirect('/404');
+const { Content } = await render(entry);
+---
+
+<Layout title={entry.data.title} description={entry.data.description}>
+	<Nav />
+	<main class="container section">
+    <article class="prose">
+      <Content />
+    </article>
+	</main>
+	<Footer />
+</Layout>

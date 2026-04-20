@@ -1,0 +1,230 @@
+---
+import { getLangFromUrl, useTranslations, getLocalizedPath } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const terminalLines = [
+  { text: '$ pnpm create velocity-astro@latest', type: 'command' },
+  { text: '', type: 'empty' },
+  { text: '┌  Create Velocity', type: 'cyan' },
+  { text: '│', type: 'muted' },
+  { text: '◇  What is your project name?', type: 'muted' },
+  { text: '│  my-awesome-site', type: 'command' },
+  { text: '│', type: 'muted' },
+  { text: '◇  Include demo landing page and sample content?', type: 'muted' },
+  { text: '│  ○ No  · Minimal starter with basic pages', type: 'muted' },
+  { text: '│  ● Yes · Full demo with landing page, blog posts', type: 'cyan' },
+  { text: '│', type: 'muted' },
+  { text: '◇  Include UI component library?', type: 'muted' },
+  { text: '│  ● Yes · Buttons, forms, cards, dialogs, etc.', type: 'cyan' },
+  { text: '│', type: 'muted' },
+  { text: '◇  Add internationalization (i18n)?', type: 'muted' },
+  { text: '│  ● Yes · Locale routing, translations', type: 'cyan' },
+];
+---
+
+<section class="hero section">
+  <div class="container hero-grid grid-12">
+    <div class="hero-content">
+      <h1 class="display-hero">{t('hero.title')}</h1>
+      <p class="hero-subtitle">{t('hero.subtitle')}</p>
+      <div class="hero-btns">
+        <a href={getLocalizedPath('/contact', lang)} class="btn btn-primary">{t('hero.cta')}</a>
+        <a href={getLocalizedPath('/services', lang)} class="btn btn-outline">{t('hero.secondary')}</a>
+      </div>
+    </div>
+    
+    <div class="hero-visual">
+      <div class="terminal-window shadow-2xl">
+        <div class="terminal-header">
+          <div class="terminal-controls">
+            <span class="control red"></span>
+            <span class="control yellow"></span>
+            <span class="control green"></span>
+          </div>
+          <div class="terminal-title">terminal</div>
+        </div>
+        <div class="terminal-content" id="terminal-content" data-lines={JSON.stringify(terminalLines)}>
+          <div class="cursor"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('terminal-content');
+  if (container) {
+    const lines = JSON.parse(container.dataset.lines || '[]');
+    
+    const typeLine = async (line: any) => {
+      const div = document.createElement('div');
+      div.className = `line ${line.type}`;
+      
+      if (line.type === 'command' && line.text.startsWith('$')) {
+        const prompt = document.createElement('span');
+        prompt.className = 'prompt';
+        prompt.textContent = '$ ';
+        div.appendChild(prompt);
+        const textNode = document.createTextNode('');
+        div.appendChild(textNode);
+        container.appendChild(div);
+        
+        const content = line.text.slice(2);
+        for (let i = 0; i < content.length; i++) {
+          textNode.textContent += content[i];
+          await new Promise(r => setTimeout(r, 40));
+        }
+      } else {
+        div.textContent = line.text;
+        container.appendChild(div);
+        await new Promise(r => setTimeout(r, 100));
+      }
+      
+      container.scrollTop = container.scrollHeight;
+    };
+
+    const run = async () => {
+      container.innerHTML = '';
+      for (const line of lines) {
+        await typeLine(line);
+      }
+      await new Promise(r => setTimeout(r, 3000));
+      run();
+    };
+
+    run();
+  }
+</script>
+
+<style>
+  .hero {
+    overflow: hidden;
+    background-color: var(--background);
+  }
+  .hero-grid {
+    align-items: center;
+  }
+  .hero-content {
+    grid-column: span 1;
+    text-align: left;
+  }
+  @media (min-width: 1024px) {
+    .hero-content {
+      grid-column: span 7;
+    }
+  }
+
+  .display-hero {
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    font-size: 3.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+
+  .hero-btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .hero-visual {
+    grid-column: span 1;
+    position: relative;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    .hero-visual {
+      grid-column: span 5;
+      margin-top: 0;
+      justify-content: flex-end;
+    }
+  }
+
+  /* Terminal Styling */
+  .terminal-window {
+    width: 100%;
+    max-width: 512px;
+    background-color: #030712;
+    border: 1px solid #1f2937;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  .terminal-header {
+    background-color: #111827;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #1f2937;
+  }
+
+  .terminal-controls {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .control {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+  }
+
+  .red { background-color: #ef4444; }
+  .yellow { background-color: #f59e0b; }
+  .green { background-color: #10b981; }
+
+  .terminal-title {
+    margin-left: 1rem;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+
+  .terminal-content {
+    padding: 1.25rem;
+    height: 380px;
+    overflow-y: auto;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    color: #f9fafb;
+    text-align: left;
+  }
+
+  :global(.line) {
+    margin-bottom: 0.125rem;
+    white-space: pre-wrap;
+  }
+
+  :global(.prompt) {
+    color: var(--kraken-purple);
+    font-weight: bold;
+  }
+
+  :global(.cyan) {
+    color: #22d3ee;
+    font-weight: 600;
+  }
+
+  :global(.muted) {
+    color: #6b7280;
+  }
+</style>

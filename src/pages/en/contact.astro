@@ -1,0 +1,25 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+---
+
+<Layout title={t('contact.title')}>
+	<Nav />
+	<main class="container section">
+		<h1 class="display-hero">{t('contact.title')}</h1>
+    <p class="hero-subtitle">{t('contact.subtitle')}</p>
+    <div class="card" style="margin-top: 4rem; max-width: 600px;">
+      <form style="display: flex; flex-direction: column; gap: 1.5rem;">
+        <input type="text" placeholder="Name" style="padding: 1rem; border: 1px solid var(--border-gray); border-radius: var(--radius-button);" />
+        <input type="email" placeholder="Email" style="padding: 1rem; border: 1px solid var(--border-gray); border-radius: var(--radius-button);" />
+        <textarea placeholder="Message" rows="5" style="padding: 1rem; border: 1px solid var(--border-gray); border-radius: var(--radius-button);"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+	</main>
+	<Footer />
+</Layout>
