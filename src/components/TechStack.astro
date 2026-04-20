@@ -1,20 +1,19 @@
 ---
-const techs = [
-  { name: 'Astro', desc: 'Framework', icon: '🚀' },
-  { name: 'Tailwind', desc: 'Styling', icon: '🎨' },
-  { name: 'TypeScript', desc: 'Language', icon: '📘' },
-  { name: 'Vite', desc: 'Bundler', icon: '⚡' },
-];
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { TECH_STACK } from '../site.config';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="tech-stack section">
   <div class="container">
     <div class="stack-header">
-      <h2 class="section-heading">Modern Tech Stack</h2>
-      <p class="text-secondary">We leverage the best tools in the industry to deliver superior results.</p>
+      <h2 class="section-heading">{t('stack.title')}</h2>
+      <p class="text-secondary">{t('stack.subtitle')}</p>
     </div>
     <div class="stack-grid">
-      {techs.map(tech => (
+      {TECH_STACK.map(tech => (
         <div class="tech-card card">
           <div class="tech-icon">{tech.icon}</div>
           <div class="tech-info">
@@ -50,6 +49,7 @@ const techs = [
   .tech-info h3 {
     font-size: 1.25rem;
     margin-bottom: 0.25rem;
+    color: var(--text-primary);
   }
   .tech-info p {
     color: var(--text-secondary);

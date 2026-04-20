@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="brandGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#4FACFE" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="80" height="80" rx="16" fill="#0B0F19" />
+  
+  <polygon points="40,12 64,26 64,54 40,68 16,54 16,26" fill="none" stroke="url(#brandGradient)" stroke-width="3" opacity="0.4" stroke-linejoin="round" />
+  
+  <circle cx="40" cy="40" r="10" fill="url(#brandGradient)" />
+  
+  <line x1="40" y1="20" x2="40" y2="30" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  <line x1="57.3" y1="30" x2="48.6" y2="35" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  <line x1="57.3" y1="50" x2="48.6" y2="45" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  <line x1="40" y1="60" x2="40" y2="50" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  <line x1="22.7" y1="50" x2="31.4" y2="45" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  <line x1="22.7" y1="30" x2="31.4" y2="35" stroke="url(#brandGradient)" stroke-width="3" stroke-linecap="round" />
+  
+  <circle cx="40" cy="20" r="3" fill="#FFFFFF" />
+  <circle cx="57.3" cy="30" r="3" fill="#FFFFFF" />
+  <circle cx="57.3" cy="50" r="3" fill="#FFFFFF" />
+  <circle cx="40" cy="60" r="3" fill="#FFFFFF" />
+  <circle cx="22.7" cy="50" r="3" fill="#FFFFFF" />
+  <circle cx="22.7" cy="30" r="3" fill="#FFFFFF" />
+</svg>

@@ -9,5 +9,10 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: false
     }
+  },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop'
+    }
   }
 });
