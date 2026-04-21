@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   i18n: {
@@ -10,9 +12,12 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+
   image: {
     service: {
       entrypoint: 'astro/assets/services/noop'
     }
-  }
+  },
+
+  adapter: cloudflare()
 });
