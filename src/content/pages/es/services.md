@@ -1,17 +1,23 @@
 ---
-title: "Nuestros Servicios de Alto Rendimiento"
-description: "Desde el concepto hasta el despliegue, construimos productos digitales que escalan."
+title: "Nuestras Soluciones"
+description: "Desde el concepto hasta la implementación, construimos sistemas y plataformas digitales escalables."
 ---
 
-# Nuestros Servicios
+## 1. Desarrollo Web y de Sistemas
+Ofrecemos servicios de desarrollo full-stack que abarcan desde sitios web corporativos y paneles administrativos hasta sistemas empresariales complejos, incluyendo frontend, backend, bases de datos e implementación.
 
-Ofrecemos una gama de servicios diseñados para que su presencia en la web sea ultrarrápida y visualmente impresionante.
+Con arquitecturas de servidores robustas y prácticas DevOps, ayudamos a construir plataformas seguras, escalables y fáciles de mantener.
 
-## 1. Desarrollo Web
-Usando **Astro 5.0** y **Tailwind CSS**, creamos sitios web ligeros y robustos.
+---
 
-## 2. Orquestación SEO
-La orquestación de metadatos y la estructura semántica se integran en la arquitectura central, no se añaden como una idea de último momento.
+## 2. Desarrollo de LLM y Agentes de IA
+Aprovechando modelos de lenguaje (LLM), desarrollamos soluciones como sistemas de preguntas y respuestas, recuperación de conocimiento, automatización de procesos y agentes inteligentes.
 
-## 3. i18n Global
-Soporte sofisticado de i18n con enrutamiento localizado y adaptación de contenido dinámico para una audiencia global.
+Desde asistentes de atención al cliente hasta herramientas internas y agentes autónomos, adaptamos cada solución al contexto real del negocio.
+
+---
+
+## 3. Soluciones IoT
+Proporcionamos soluciones IoT integrales que combinan hardware y software, incluyendo conexión de dispositivos, recopilación de datos, comunicación en la nube, sistemas backend y visualización.
+
+Esto permite a las empresas mejorar la eficiencia operativa, gestionar dispositivos de forma inteligente y tomar decisiones basadas en datos en tiempo real.

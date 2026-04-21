@@ -1,16 +1,35 @@
 ---
-title: "About Tokenflake | High-Performance Web Design"
-description: "Discover Tokenflake's philosophy: performance-first, design-driven Astro web development."
-keywords: ["Astro Studio", "Web Design", "High Performance Web", "Astro v5"]
+title: "About Us"
+description: "A technology team focused on digital transformation and operational efficiency."
 ---
 
-# About Tokenflake
+# About Us
 
-We build high-performance Astro-powered galleries that merge the surgical precision of modern tech with the sophisticated whitespace of architectural journals.
+## Who We Are
+We are a technology team focused on enterprise digital transformation and operational efficiency. Through software systems, intelligent tools, and data-driven solutions, we help organizations optimize business processes, reduce collaboration costs, and improve overall performance.
 
-## Our Philosophy
-Performance is not a feature, it's the foundation. Most websites are built on heavy, legacy layers. Tokenflake eliminates the noise, focusing on what matters: your content delivered at the speed of thought.
+We believe that truly valuable technology is not just about building systems, but about enabling real business growth and management efficiency.
 
-- **Dynamic component islands** for optimal interactivity.
-- **Global CDN distribution** for sub-100ms latency.
-- **Automated image optimization** and modern format delivery.
+---
+
+## What We Do
+Based on real-world business needs in digital transformation, we provide a wide range of technical services, including:
+
+- Website and platform development  
+- Server and system architecture  
+- LLM and AI agent applications  
+- IoT (Internet of Things) solutions  
+
+Whether building customer-facing platforms or internal management systems, we always focus on business outcomes and deliver stable, scalable, and continuously evolving solutions.
+
+---
+
+## How We Work
+We emphasize a complete delivery cycle, from requirement analysis to long-term optimization:
+
+- Deep understanding of business needs  
+- Practical and scalable solution design  
+- High-quality technical implementation  
+- Continuous delivery and improvement  
+
+We help transform fragmented challenges into structured system capabilities. Enhancing efficiency, enabling collaboration, and building data assets through technology is how we consistently create value for our clients.

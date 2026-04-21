@@ -74,94 +74,138 @@ export const ui = {
   'contact.subtitle': '无论您是企业还是个人，我们都可以为您提供专业的技术解决方案。',
 
 },
-  en: {
-    'site.name': 'Tokenflake',
-    'nav.home': 'Home',
-    'nav.products': 'Products',
-    'nav.about': 'About',
-    'nav.services': 'Services',
-    'nav.contact': 'Contact',
-    'hero.title': 'Build your next big thing with Astro',
-    'hero.subtitle': 'A high-performance, SEO-friendly starter template inspired by artisanal design.',
-    'hero.cta': 'Get Started',
-    'hero.secondary': 'Our Services',
-    'features.title': 'What\'s Included',
-    'features.seo.title': 'Optimized SEO',
-    'features.seo.desc': 'Fully optimized for search engines with meta tags and sitemap.',
-    'features.perf.title': 'High Performance',
-    'features.perf.desc': 'Lightning fast load times thanks to Astro\'s island architecture.',
-    'features.design.title': 'Artisanal Design',
-    'features.design.desc': 'Beautiful, warm design language inspired by physical craft.',
-    'stats.title': 'Performance is the Foundation',
-    'stats.subtitle': 'We build websites that score 100/100 on Lighthouse out of the box. Speed isn\'t a luxury; it\'s a requirement for modern SEO and user experience.',
-    'stats.feature1': 'Zero hydration by default',
-    'stats.feature2': 'Automatic image optimization',
-    'stats.feature3': 'Global Edge distribution',
-    'stack.title': 'Modern Tech Stack',
-    'stack.subtitle': 'We leverage the best tools in the industry to deliver superior results.',
-    'footer.description': 'A modern Astro starter for companies who care about design and performance.',
-    'footer.rights': 'All rights reserved.',
-    'footer.product': 'Product',
-    'footer.features': 'Features',
-    'footer.performance': 'Performance',
-    'footer.seo': 'SEO',
-    'footer.company': 'Company',
-    'footer.about': 'About',
-    'footer.blog': 'Blog',
-    'footer.contact': 'Contact',
-    'footer.legal': 'Legal',
-    'footer.privacy': 'Privacy Policy',
-    'footer.terms': 'Terms of Service',
-    'about.title': 'About Us',
-    'about.subtitle': 'We are a design-driven studio focusing on high-performance web experiences.',
-    'services.title': 'Our Services',
-    'services.subtitle': 'From concept to deployment, we build digital products that scale.',
-    'contact.title': 'Get in Touch',
-    'contact.subtitle': 'Have a project in mind? We\'d love to hear from you.',
-  },
-  es: {
-    'site.name': 'Tokenflake',
-    'nav.home': 'Inicio',
-    'nav.products': 'Productos',
-    'nav.about': 'Nosotros',
-    'nav.services': 'Servicios',
-    'nav.contact': 'Contacto',
-    'hero.title': 'Construye tu próximo gran proyecto con Astro',
-    'hero.subtitle': 'Una plantilla de inicio de alto rendimiento y amigable con el SEO inspirada en el diseño artesanal.',
-    'hero.cta': 'Empezar',
-    'hero.secondary': 'Nuestros Servicios',
-    'features.title': 'Qué Incluye',
-    'features.seo.title': 'SEO Optimizado',
-    'features.seo.desc': 'Totalmente optimizado para motores de búsqueda con etiquetas meta y sitemap.',
-    'features.perf.title': 'Alto Rendimiento',
-    'features.perf.desc': 'Tiempos de carga ultrarrápidos gracias a la arquitectura de islas de Astro.',
-    'features.design.title': 'Diseño Artesanal',
-    'features.design.desc': 'Lenguaje de diseño hermoso y cálido inspirado en la artesanía física.',
-    'stats.title': 'El rendimiento es la base',
-    'stats.subtitle': 'Construimos sitios web que obtienen una puntuación de 100/100 en Lighthouse de inmediato. La velocidad no es un lujo; es un requisito para el SEO moderno y la experiencia del usuario.',
-    'stats.feature1': 'Cero hidratación por defecto',
-    'stats.feature2': 'Optimización automática de imágenes',
-    'stats.feature3': 'Distribución Global en el Borde',
-    'stack.title': 'Pila Tecnológica Moderna',
-    'stack.subtitle': 'Aprovechamos las mejores herramientas de la industria para ofrecer resultados superiores.',
-    'footer.description': 'Un inicio moderno de Astro para empresas que se preocupan por el diseño y el rendimiento.',
-    'footer.rights': 'Todos los derechos reservados.',
-    'footer.product': 'Producto',
-    'footer.features': 'Características',
-    'footer.performance': 'Rendimiento',
-    'footer.seo': 'SEO',
-    'footer.company': 'Empresa',
-    'footer.about': 'Nosotros',
-    'footer.blog': 'Blog',
-    'footer.contact': 'Contacto',
-    'footer.legal': 'Legal',
-    'footer.privacy': 'Política de Privacidad',
-    'footer.terms': 'Términos de Servicio',
-    'about.title': 'Sobre Nosotros',
-    'about.subtitle': 'Somos un estudio centrado en el diseño que crea experiencias web de alto rendimiento.',
-    'services.title': 'Nuestros Servicios',
-    'services.subtitle': 'Desde el concepto hasta el despliegue, construimos productos digitales que escalan.',
-    'contact.title': 'Contáctanos',
-    'contact.subtitle': '¿Tienes un proyecto en mente? Nos encantaría saber de ti.',
-  },
+ en: {
+  'site.name': '',
+
+  'nav.home': 'Home',
+  'nav.products': ' ',
+  'nav.about': 'About',
+  'nav.services': 'Solutions',
+  'nav.contact': 'Contact',
+
+  // ===== Hero =====
+  'hero.title': 'Enterprise System & Digital Solutions Provider',
+  'hero.subtitle': 'Specializing in IoT, edge computing, cybersecurity, and AI to help businesses achieve digital transformation and operational efficiency.',
+  'hero.cta': 'Get a Solution',
+  'hero.secondary': 'Contact Us',
+
+  // ===== Features =====
+  'features.title': 'Our Core Capabilities',
+
+  'features.seo.title': 'IoT & Edge Computing',
+  'features.seo.desc': 'Enable reliable device connectivity and edge computing capabilities for real-time data processing and intelligent management.',
+
+  'features.perf.title': 'Cybersecurity & Architecture',
+  'features.perf.desc': 'Build secure and robust network architectures to ensure system stability and data protection.',
+
+  'features.design.title': 'AI & Large Language Models',
+  'features.design.desc': 'Develop customized AI solutions powered by large language models to deliver intelligent and precise outcomes.',
+
+  // ===== Stats =====
+  'stats.title': 'Why Choose Us',
+  'stats.subtitle': 'We deliver not only technology, but practical and sustainable solutions that reduce costs and improve efficiency.',
+
+  'stats.feature1': 'Fast Response & Delivery',
+  'stats.feature2': 'High Reliability',
+  'stats.feature3': 'Strong Trustworthiness',
+
+  // ===== Stack =====
+  'stack.title': 'Technology & Capabilities',
+  'stack.subtitle': 'Embracing AI advancements, we integrate intelligent algorithms with system engineering to build solutions with automated decision-making and continuous optimization.',
+
+  // ===== Footer =====
+  'footer.description': 'We provide professional system and digital solutions for businesses and individuals.',
+  'footer.rights': 'All rights reserved.',
+  'footer.product': 'Product',
+  'footer.features': 'Solutions',
+  'footer.performance': 'Capabilities',
+  'footer.seo': 'Architecture',
+  'footer.company': 'Company',
+  'footer.about': 'About',
+  'footer.blog': 'Insights',
+  'footer.contact': 'Contact',
+  'footer.legal': 'Legal',
+  'footer.privacy': 'Privacy Policy',
+  'footer.terms': 'Terms of Service',
+
+  // ===== About =====
+  'about.title': 'About Us',
+  'about.subtitle': 'We are a technology team focused on system services and digital solutions, delivering stable, efficient, and scalable systems tailored to business needs.',
+
+  // ===== Services =====
+  'services.title': 'Our Solutions',
+  'services.subtitle': 'End-to-end services covering system development, network architecture, security, and digital transformation.',
+
+  // ===== Contact =====
+  'contact.title': 'Contact Us',
+  'contact.subtitle': 'Whether you are a business or an individual, we are ready to provide tailored technical solutions.',
+},
+
+es: {
+  'site.name': '',
+
+  'nav.home': 'Inicio',
+  'nav.products': ' ',
+  'nav.about': 'Nosotros',
+  'nav.services': 'Soluciones',
+  'nav.contact': 'Contacto',
+
+  // ===== Hero =====
+  'hero.title': 'Proveedor de Sistemas Empresariales y Soluciones Digitales',
+  'hero.subtitle': 'Especializados en IoT, computación en el borde, ciberseguridad e inteligencia artificial para impulsar la transformación digital y la eficiencia operativa.',
+  'hero.cta': 'Obtener Solución',
+  'hero.secondary': 'Contáctanos',
+
+  // ===== Features =====
+  'features.title': 'Nuestras Capacidades Clave',
+
+  'features.seo.title': 'IoT y Computación en el Borde',
+  'features.seo.desc': 'Permite la conexión confiable de dispositivos y el procesamiento de datos en tiempo real con capacidades inteligentes.',
+
+  'features.perf.title': 'Ciberseguridad y Arquitectura',
+  'features.perf.desc': 'Diseñamos arquitecturas seguras y robustas para garantizar la estabilidad del sistema y la protección de datos.',
+
+  'features.design.title': 'IA y Modelos de Lenguaje',
+  'features.design.desc': 'Desarrollamos soluciones personalizadas basadas en IA y modelos de lenguaje para ofrecer resultados inteligentes y precisos.',
+
+  // ===== Stats =====
+  'stats.title': 'Por Qué Elegirnos',
+  'stats.subtitle': 'No solo ofrecemos tecnología, sino soluciones prácticas y sostenibles que reducen costos y mejoran la eficiencia.',
+
+  'stats.feature1': 'Respuesta y Entrega Rápida',
+  'stats.feature2': 'Alta Fiabilidad',
+  'stats.feature3': 'Alta Confianza',
+
+  // ===== Stack =====
+  'stack.title': 'Tecnología y Capacidades',
+  'stack.subtitle': 'Adoptamos avances en IA, integrando algoritmos inteligentes con ingeniería de sistemas para crear soluciones con toma de decisiones automatizada y mejora continua.',
+
+  // ===== Footer =====
+  'footer.description': 'Ofrecemos soluciones profesionales de sistemas y digitalización para empresas e individuos.',
+  'footer.rights': 'Todos los derechos reservados.',
+  'footer.product': 'Producto',
+  'footer.features': 'Soluciones',
+  'footer.performance': 'Capacidades',
+  'footer.seo': 'Arquitectura',
+  'footer.company': 'Empresa',
+  'footer.about': 'Nosotros',
+  'footer.blog': 'Noticias',
+  'footer.contact': 'Contacto',
+  'footer.legal': 'Legal',
+  'footer.privacy': 'Política de Privacidad',
+  'footer.terms': 'Términos de Servicio',
+
+  // ===== About =====
+  'about.title': 'Sobre Nosotros',
+  'about.subtitle': 'Somos un equipo tecnológico enfocado en servicios de sistemas y soluciones digitales, ofreciendo sistemas estables, eficientes y escalables.',
+
+  // ===== Services =====
+  'services.title': 'Nuestras Soluciones',
+  'services.subtitle': 'Servicios integrales que cubren desarrollo de sistemas, arquitectura de red, seguridad y transformación digital.',
+
+  // ===== Contact =====
+  'contact.title': 'Contáctanos',
+  'contact.subtitle': 'Ya sea empresa o individuo, ofrecemos soluciones técnicas adaptadas a sus necesidades.',
+},
+
 } as const;
