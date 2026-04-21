@@ -49,8 +49,8 @@ export const ui = {
   // ===== 页脚 =====
   'footer.description': '我们致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
   'footer.rights': '版权所有。',
-  'footer.product': ' ',
-  'footer.services': '解决方案',
+  'footer.product': '产品 ',
+  'footer.features': '解决方案',
   'footer.performance': '技术能力',
   'footer.seo': '系统架构',
   'footer.company': '公司',
