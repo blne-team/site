@@ -8,7 +8,7 @@ export const defaultLang = 'zh-cn';
 
 export const ui = {
   "zh-cn": {
-  'site.name': '新龙源',
+  'site.name': '',
 
   'nav.home': '首页',
   'nav.products': '产品',
@@ -35,19 +35,19 @@ export const ui = {
   'features.design.desc': '根据业务需求定制开发系统平台，实现多系统整合与业务流程自动化。',
 
   // ===== 优势 =====
-  'stats.title': '为什么选择新龙源',
+  'stats.title': '为什么选择我们',
   'stats.subtitle': '我们不仅提供技术，更提供可落地、可持续的解决方案，帮助客户降低成本、提升效率。',
 
   'stats.feature1': '快速响应与交付',
-  'stats.feature2': '高可靠性系统设计',
-  'stats.feature3': '可扩展架构支持',
+  'stats.feature2': '可靠性高',
+  'stats.feature3': '可信性强',
 
-  // ===== 技术/能力说明 =====
+  // ===== 技术/能力说明=====
   'stack.title': '技术与能力',
-  'stack.subtitle': '覆盖从底层架构到业务应用的全栈能力，满足多行业复杂需求。',
+  'stack.subtitle': '拥抱AI技术发展，融合智能算法与系统工程能力，打造具备自动化决策与持续优化能力的数字化解决方案。',
 
   // ===== 页脚 =====
-  'footer.description': '新龙源致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
+  'footer.description': '我们致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
   'footer.rights': '版权所有。',
   'footer.product': '产品',
   'footer.features': '解决方案',
@@ -62,8 +62,8 @@ export const ui = {
   'footer.terms': '使用条款',
 
   // ===== 关于我们 =====
-  'about.title': '关于新龙源',
-  'about.subtitle': '新龙源是一家专注于计算机系统服务与解决方案的技术公司，致力于为客户提供稳定、高效、可扩展的系统建设与技术支持。',
+  'about.title': '关于我们',
+  'about.subtitle': '我们是一家专注于计算机系统服务与解决方案的技术团队，致力于为客户提供稳定、高效、可扩展的系统建设与技术支持。',
 
   // ===== 服务 =====
   'services.title': '我们的解决方案',
@@ -73,14 +73,13 @@ export const ui = {
   'contact.title': '联系我们',
   'contact.subtitle': '无论您是企业还是个人，我们都可以为您提供专业的技术解决方案。',
 
-  // ===== 可扩展（建议你后面加到页面中）=====
+  // ===== 产品 =====
   'products.aiEdu.title': 'AI教育平台',
   'products.aiEdu.desc': '基于人工智能技术打造的智能教育平台，提升教学效率与学习体验。',
 
   'products.token.title': '统一Token网关',
   'products.token.desc': '统一身份认证与访问控制系统，提升系统安全性与管理效率。'
-
-  },
+},
   en: {
     'site.name': 'Tokenflake',
     'nav.home': 'Home',
