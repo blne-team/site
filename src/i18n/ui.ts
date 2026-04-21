@@ -11,6 +11,7 @@ export const ui = {
   'site.name': '',
 
   'nav.home': '首页',
+  'nav.products': ' ',
   'nav.about': '关于我们',
   'nav.services': '解决方案',
   'nav.contact': '联系我们',
@@ -19,6 +20,7 @@ export const ui = {
   'hero.title': '企业级计算机系统与解决方案提供商',
   'hero.subtitle': '专注物联网、边缘计算、网络安全与人工智能，帮助企业实现数字化升级与高效运营。',
   'hero.cta': '获取方案',
+  'hero.secondary': '联系我们',
 
   // ===== 核心能力 =====
   'features.title': '我们的核心能力',
@@ -47,6 +49,7 @@ export const ui = {
   // ===== 页脚 =====
   'footer.description': '我们致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
   'footer.rights': '版权所有。',
+  'footer.product': ' ',
   'footer.services': '解决方案',
   'footer.performance': '技术能力',
   'footer.seo': '系统架构',
