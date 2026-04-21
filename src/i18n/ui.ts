@@ -8,49 +8,78 @@ export const defaultLang = 'zh-cn';
 
 export const ui = {
   "zh-cn": {
-    'site.name': 'Tokenflake',
-    'nav.home': '首页',
-    'nav.products': '产品',
-    'nav.about': '关于我们',
-    'nav.services': '服务',
-    'nav.contact': '联系我们',
-    'hero.title': '使用 Astro 构建你的下一个大项目',
-    'hero.subtitle': '一个高性能、SEO 友好的起始模板，灵感来自于工艺设计。',
-    'hero.cta': '开始使用',
-    'hero.secondary': '我们的服务',
-    'features.title': '包含什么',
-    'features.seo.title': '优化的 SEO',
-    'features.seo.desc': '通过 meta 标签和 sitemap 完全优化搜索引擎。',
-    'features.perf.title': '高性能',
-    'features.perf.desc': '得益于 Astro 的岛屿架构，加载时间极快。',
-    'features.design.title': '工艺设计',
-    'features.design.desc': '美丽、温暖的设计语言， 灵感来自于物理工艺。',
-    'stats.title': '性能是基础',
-    'stats.subtitle': '我们构建的网站在 Lighthouse 上的得分开箱即为 100/100。速度不是奢侈品；它是现代 SEO 和用户体验的要求。',
-    'stats.feature1': '默认零水合',
-    'stats.feature2': '自动图像优化',
-    'stats.feature3': '全球边缘分发',
-    'stack.title': '现代技术栈',
-    'stack.subtitle': '我们利用行业中最好的工具来交付卓越的结果。',
-    'footer.description': '一个现代的 Astro 起始模板，适合注重设计和性能的公司。',
-    'footer.rights': '版权所有。',
-    'footer.product': '产品',
-    'footer.features': '特性',
-    'footer.performance': '性能',
-    'footer.seo': 'SEO',
-    'footer.company': '公司',
-    'footer.about': '关于我们',
-    'footer.blog': '博客',
-    'footer.contact': '联系我们',
-    'footer.legal': '法律',
-    'footer.privacy': '隐私政策',
-    'footer.terms': '使用条款',
-    'about.title': '关于我们',
-    'about.subtitle': '我们是一个以设计为驱动的工作室，专注于高性能的网络体验。',
-    'services.title': '我们的服务',
-    'services.subtitle': '从概念到部署，我们构建可扩展的数字产品。',
-    'contact.title': '联系我们',
-    'contact.subtitle': '有项目想法吗？我们很想听听你的意见。',
+  'site.name': '新龙源',
+
+  'nav.home': '首页',
+  'nav.products': '产品',
+  'nav.about': '关于我们',
+  'nav.services': '解决方案',
+  'nav.contact': '联系我们',
+
+  // ===== 首屏 =====
+  'hero.title': '企业级计算机系统与解决方案提供商',
+  'hero.subtitle': '专注物联网、边缘计算、网络安全与系统应用，帮助企业实现数字化升级与高效运营。',
+  'hero.cta': '获取方案',
+  'hero.secondary': '查看产品',
+
+  // ===== 核心能力 =====
+  'features.title': '我们的核心能力',
+
+  'features.seo.title': '物联网与边缘计算',
+  'features.seo.desc': '构建稳定高效的设备接入与边缘计算能力，实现数据实时处理与智能化管理。',
+
+  'features.perf.title': '网络安全与架构',
+  'features.perf.desc': '提供安全可靠的网络架构与防护体系，保障系统稳定运行与数据安全。',
+
+  'features.design.title': '系统开发与集成',
+  'features.design.desc': '根据业务需求定制开发系统平台，实现多系统整合与业务流程自动化。',
+
+  // ===== 优势 =====
+  'stats.title': '为什么选择新龙源',
+  'stats.subtitle': '我们不仅提供技术，更提供可落地、可持续的解决方案，帮助客户降低成本、提升效率。',
+
+  'stats.feature1': '快速响应与交付',
+  'stats.feature2': '高可靠性系统设计',
+  'stats.feature3': '可扩展架构支持',
+
+  // ===== 技术/能力说明 =====
+  'stack.title': '技术与能力',
+  'stack.subtitle': '覆盖从底层架构到业务应用的全栈能力，满足多行业复杂需求。',
+
+  // ===== 页脚 =====
+  'footer.description': '新龙源致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
+  'footer.rights': '版权所有。',
+  'footer.product': '产品',
+  'footer.features': '解决方案',
+  'footer.performance': '技术能力',
+  'footer.seo': '系统架构',
+  'footer.company': '公司',
+  'footer.about': '关于我们',
+  'footer.blog': '资讯',
+  'footer.contact': '联系我们',
+  'footer.legal': '法律',
+  'footer.privacy': '隐私政策',
+  'footer.terms': '使用条款',
+
+  // ===== 关于我们 =====
+  'about.title': '关于新龙源',
+  'about.subtitle': '新龙源是一家专注于计算机系统服务与解决方案的技术公司，致力于为客户提供稳定、高效、可扩展的系统建设与技术支持。',
+
+  // ===== 服务 =====
+  'services.title': '我们的解决方案',
+  'services.subtitle': '覆盖系统开发、网络架构、安全防护及数字化升级的一站式服务。',
+
+  // ===== 联系 =====
+  'contact.title': '联系我们',
+  'contact.subtitle': '无论您是企业还是个人，我们都可以为您提供专业的技术解决方案。',
+
+  // ===== 可扩展（建议你后面加到页面中）=====
+  'products.aiEdu.title': 'AI教育平台',
+  'products.aiEdu.desc': '基于人工智能技术打造的智能教育平台，提升教学效率与学习体验。',
+
+  'products.token.title': '统一Token网关',
+  'products.token.desc': '统一身份认证与访问控制系统，提升系统安全性与管理效率。'
+
   },
   en: {
     'site.name': 'Tokenflake',
