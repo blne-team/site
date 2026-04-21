@@ -18,7 +18,7 @@ export const SITE = {
 
 export const TECH_STACK = [
   { name: 'Astro', desc: 'Framework', icon: '🚀' },
-  { name: 'Tailwind', desc: 'Styling', icon: '🎨' },
+  { name: 'LangGraph', desc: 'Styling', icon: '🎨' },
   { name: 'TypeScript', desc: 'Language', icon: '📘' },
-  { name: 'Vite', desc: 'Bundler', icon: '⚡' },
+  { name: 'CrewAI', desc: 'Bundler', icon: '⚡' },
 ];

@@ -11,16 +11,14 @@ export const ui = {
   'site.name': '',
 
   'nav.home': '首页',
-  'nav.products': '产品',
   'nav.about': '关于我们',
   'nav.services': '解决方案',
   'nav.contact': '联系我们',
 
   // ===== 首屏 =====
   'hero.title': '企业级计算机系统与解决方案提供商',
-  'hero.subtitle': '专注物联网、边缘计算、网络安全与系统应用，帮助企业实现数字化升级与高效运营。',
+  'hero.subtitle': '专注物联网、边缘计算、网络安全与人工智能，帮助企业实现数字化升级与高效运营。',
   'hero.cta': '获取方案',
-  'hero.secondary': '查看产品',
 
   // ===== 核心能力 =====
   'features.title': '我们的核心能力',
@@ -31,8 +29,8 @@ export const ui = {
   'features.perf.title': '网络安全与架构',
   'features.perf.desc': '提供安全可靠的网络架构与防护体系，保障系统稳定运行与数据安全。',
 
-  'features.design.title': '系统开发与集成',
-  'features.design.desc': '根据业务需求定制开发系统平台，实现多系统整合与业务流程自动化。',
+  'features.design.title': '人工智能与大语言模型',
+  'features.design.desc': '根据需求定制开发基于大语言模型的解决方案，实现智能且精准的解决方案。',
 
   // ===== 优势 =====
   'stats.title': '为什么选择我们',
@@ -49,8 +47,7 @@ export const ui = {
   // ===== 页脚 =====
   'footer.description': '我们致力于为企业与个人提供专业的计算机系统与数字化解决方案。',
   'footer.rights': '版权所有。',
-  'footer.product': '产品',
-  'footer.features': '解决方案',
+  'footer.services': '解决方案',
   'footer.performance': '技术能力',
   'footer.seo': '系统架构',
   'footer.company': '公司',
@@ -73,12 +70,6 @@ export const ui = {
   'contact.title': '联系我们',
   'contact.subtitle': '无论您是企业还是个人，我们都可以为您提供专业的技术解决方案。',
 
-  // ===== 产品 =====
-  'products.aiEdu.title': 'AI教育平台',
-  'products.aiEdu.desc': '基于人工智能技术打造的智能教育平台，提升教学效率与学习体验。',
-
-  'products.token.title': '统一Token网关',
-  'products.token.desc': '统一身份认证与访问控制系统，提升系统安全性与管理效率。'
 },
   en: {
     'site.name': 'Tokenflake',
